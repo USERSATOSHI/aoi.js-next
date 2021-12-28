@@ -1,16 +1,15 @@
 import { Collection } from "discord.js";
-import { CommandName } from "../typings/types/CommandTypes";
-import { AoiClient } from "./AoiClient";
+import { AoiClient } from "../core/AoiClient";
 import Command from "./Command";
 
 /**
  * Stores commands for the Client.
  */
-export class AoiCommandManager {
+export default class CommandManager {
 	#client: AoiClient;
 	#customTypes?: string[];
 	#isDefault: boolean;
-	data!: Record<string, Collection<CommandName, Command>>;
+	data!: Record<string, Collection<string, Command>>;
 
 	constructor(client: AoiClient, isDefault = true, customTypes?: string[]) {
 		this.#client = client;

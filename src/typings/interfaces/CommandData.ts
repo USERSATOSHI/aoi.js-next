@@ -1,8 +1,7 @@
-import { CommandName, CommandTypes } from "../types/CommandTypes";
 
 export interface CommandData {
-	name: CommandName;
+	name: string;
 	code: string;
-	type?: CommandTypes;
-	[CommandProperty: string]: any;
+	type?: string;
+	[CommandProperty: string]: unknown;
 }

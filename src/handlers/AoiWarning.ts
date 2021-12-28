@@ -1,4 +1,5 @@
 import axios from "axios";
+import noop from "../util/functions/noop";
 
 export default async function () {
 	/**
@@ -8,7 +9,7 @@ export default async function () {
 
 	const res = await axios
 		.get("https://api.leref.ga/package/version")
-		.catch((_) => undefined); //This will change when the package is published.
+		.catch(noop); //This will change when the package is published.
 
 	if (!res) return;
 
